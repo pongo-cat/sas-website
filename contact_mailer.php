@@ -4,14 +4,13 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
-include dirname(__DIR__) .'/PHPMAILER/PHPMailer.php';
-include dirname(__DIR__) .'/PHPMAILER/Exception.php';
-include dirname(__DIR__) .'/PHPMAILER/SMTP.php';
+include dirname(__DIR__) .'\PHPMAILER\src\PHPMailer.php';
+include dirname(__DIR__) .'\PHPMAILER\src\Exception.php';
+include dirname(__DIR__) .'\PHPMAILER\src\SMTP.php';
 
 function checkSend($mail){
     if( !$mail->send() ){
-        $tab = array('error' => 'Mailer Error: '.$mail->ErrorInfo );
-        echo json_encode($tab);
+        echo "window.alert('Message could not be sent. Mailer Error: { $mail->ErrorInfo }')";
         return false;
     }
     else{
@@ -32,7 +31,7 @@ $cmail->SMTPAuth = true;
 $cmail->Username = $username;
 $cmail->Password = $password;
 $cmail->Port = $port;
-$cmail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
+$cmail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio', 0);
 $cmail->addAddress($_POST['email']);
 $cmail->addReplyTo('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
 $cmail->isHTML(true);
@@ -47,7 +46,7 @@ $smail->SMTPAuth = true;
 $smail->Username = $username;
 $smail->Password = $password;
 $smail->Port = $port;
-$smail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
+$smail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio', 0);
 $smail->addAddress('sleipnirartstudio@gmail.com');
 $smail->addReplyTo('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
 $smail->isHTML(true);
@@ -57,4 +56,3 @@ $smail->Body = "You have a new message from " . $_POST['name'] . ". Here is the 
 checkSend($cmail);
 checkSend($smail);
 
-echo"<script>window.location.href='contact.php'</script>";
