@@ -1,63 +1,35 @@
-<!--Sends email to user (confirming message) and me-->
+<!--Connects to database to insert into 'emailList' table in 'sasdatabase' database-->
 
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
-include dirname(__DIR__) .'/PHPMAILER/PHPMailer.php';
-include dirname(__DIR__) .'/PHPMAILER/Exception.php';
-include dirname(__DIR__) .'/PHPMAILER/SMTP.php';
+// Connect to database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "sasdatabase";
 
-function checkSend($mail){
-    if( !$mail->send() ){
-        $tab = array('error' => 'Mailer Error: '.$mail->ErrorInfo );
-        echo json_encode($tab);
-        return false;
-    }
-    else{
-        echo "<script>alert('Message sent successfully!')</script>";
-        return true;
-    }
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-$username = getenv('PHPMailer_USERNAME');
-$password = getenv('PHPMailer_APPPASSWORD');
-$port = getenv('PHPMailer_PORT');
+// Insert into 'emailList' table
+$name = mysqli_real_escape_string($conn, $_POST['name']);
+$email = mysqli_real_escape_string($conn, $_POST['email']);
+$message = mysqli_real_escape_string($conn, $_POST['message']);
 
-$cmail = new PHPMailer();
-$cmail->CharSet = 'UTF-8';
-$cmail->STMPSecure = 'tls';
-$cmail->Host = 'smtp.gmail.com';
-$cmail->SMTPAuth = true;
-$cmail->Username = $username;
-$cmail->Password = $password;
-$cmail->Port = $port;
-$cmail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
-$cmail->addAddress($_POST['email']);
-$cmail->addReplyTo('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
-$cmail->isHTML(true);
-$cmail->Subject = 'Message Confirmation';
-$cmail->Body = "Thank you for your message, " . $_POST['name'] . "! We will get back to you as soon as possible.";
+$sql = "INSERT INTO messageList (name, email, message) VALUES ('$name', '$email', '$message')";
 
-$smail = new PHPMailer();
-$smail->CharSet = 'UTF-8';
-$smail->STMPSecure = 'tls';
-$smail->Host = 'smtp.gmail.com';
-$smail->SMTPAuth = true;
-$smail->Username = $username;
-$smail->Password = $password;
-$smail->Port = $port;
-$smail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
-$smail->addAddress('sleipnirartstudio@gmail.com');
-$smail->addReplyTo('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
-$smail->isHTML(true);
-$smail->Subject = 'New Message from ' . $_POST['name'];
-$smail->Body = "You have a new message from " . $_POST['name'] . ". Here is the message: " . $_POST['message'];
+if ($conn->query($sql) === TRUE) {
+    echo "<script>alert('Message sent successfully!')</script>";
+    echo"<script>window.location.href='contact.php'</script>";
+} else {
+    echo "<script>alert('sorry, there was an error sending your message.')</script>";
+    echo"<script>window.location.href='contact.php'</script>";
+}
 
-checkSend($cmail);
-checkSend($smail);
+// Close connection
 
-echo"<script>window.location.href='contact.php'</script>";
-
+$conn->close();
 ?>
-
