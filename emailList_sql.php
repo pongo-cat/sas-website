@@ -20,14 +20,18 @@ function checkSend($mail){
     }
 }
 
+$username = getenv('PHPMailer_USERNAME');
+$password = getenv('PHPMailer_APPPASSWORD');
+$port = getenv('PHPMailer_PORT');
+
 $cmail = new PHPMailer();
 $cmail->CharSet = 'UTF-8';
 $cmail->STMPSecure = 'tls';
 $cmail->Host = 'smtp.gmail.com';
 $cmail->SMTPAuth = true;
-$cmail->Username = 'sleipnirartstudio@gmail.com';
-$cmail->Password = 'fawr bnfq rasd qxil';
-$cmail->Port = 587;
+$cmail->Username = $username;
+$cmail->Password = $password;
+$cmail->Port = $port;
 $cmail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
 $cmail->addAddress($_POST['email']);
 $cmail->addReplyTo('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
@@ -40,9 +44,9 @@ $smail->CharSet = 'UTF-8';
 $smail->STMPSecure = 'tls';
 $smail->Host = 'smtp.gmail.com';
 $smail->SMTPAuth = true;
-$smail->Username = 'sleipnirartstudio@gmail.com';
-$smail->Password = 'fawr bnfq rasd qxil';
-$smail->Port = 587;
+$smail->Username = $username;
+$smail->Password = $password;
+$smail->Port = $port;
 $smail->setFrom('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
 $smail->addAddress('sleipnirartstudio@gmail.com');
 $smail->addReplyTo('sleipnirartstudio@gmail.com', 'Sleipnir Art Studio');
