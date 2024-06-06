@@ -1,0 +1,130 @@
+
+/*BODY HEADER AND FOOTER*/
+body {
+    margin-top: 110px;
+    bottom: 0;
+    background-color:rgb(196, 248, 248);
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 0px;
+    background-color: aliceblue;
+    height: 100px;
+}
+
+.title-wrapper {
+    left: 300px;
+    position: absolute;
+    top: 10px;
+    text-align: center;
+
+  }
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 0px;
+    background-color: aliceblue;
+    height: 50px;
+    text-align: center;
+
+}
+
+/*NAVIGATION BAR*/
+
+.sidebar {
+    
+    width:100px;
+    right: 0;
+    position: fixed;
+    
+  }
+  
+  .mainmenu,
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mainmenu a,
+  .mainmenu label {
+    display: block;
+    background-color: aliceblue;
+    text-decoration: none;
+    padding: 10px;
+    color: #087068;
+  }
+  
+  .mainmenu input {
+    display: none;
+  }
+  
+  
+  .mainmenu a:hover{
+    background-color: #087068;
+    color: aliceblue;
+  }
+  
+  .mainmenu label:hover{
+    background-color: #087068;
+    color: aliceblue;
+  }  
+
+  .mainmenu :checked+.submenu {
+    display: block;
+    max-height: 200px;
+
+  }
+  
+  .submenu a {
+    background-color: #ddd;
+  }
+  
+  .submenu a:hover {
+    background-color: #087068;
+    color: aliceblue;
+  }
+  
+  .submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-out;
+  }
+
+    /*TEXT CONTENTS*/
+  .main-wrapper {
+    align-content: center;
+    background-color: rgb(228, 244, 245);
+    color: #087068;
+  }
+
+  .main-content {
+    text-align: center;
+    text-wrap: wrap;
+    
+  }
+
+  .text-content {
+    margin: 130px;
+    background-color: aliceblue;
+  }
+
+  /*STICKIES*/
+  /*INTERACTIVE FORMS*/
+  .contact-form {
+    padding: 20px;
+    
+  }
+
+  /*HEADERs*/
+  h1 {
+    align-self: center;
+    font-size:xx-large;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+    color: #087068;
+  }
