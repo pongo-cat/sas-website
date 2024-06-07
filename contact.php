@@ -23,7 +23,7 @@
             </div>
 
             <div class = "contact-form">
-                <form action = "contact_sql.php" method = "post">
+                <form action = "contact_mailer.php" method = "post">
                     <label for = "name">Name:</label>
                     <input type = "text" id = "name" name = "name" required>
                     <br>
