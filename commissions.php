@@ -24,7 +24,7 @@
                     text-decoration: none;
                 }
             </style> 
-                <img src="images/family.jpg" alt="Family Portrait." class = portfolio>
+                <img src="images/prancy.jpg" alt="Prancy Portrait." class = portfolio>
                 
                 <div class = "text-content">
                 <h2>Pet and Family Portraiture</h2>

@@ -137,6 +137,7 @@ body {
   /*IMAGES*/
   img.portfolio {
     width: 50%;
+    max-width: 500px;
     height: 100%;
   }
 
