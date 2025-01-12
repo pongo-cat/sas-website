@@ -5,25 +5,18 @@
         <ul class="mainmenu">
             <li><a href="main.php">Home</a></li>
 
-            <li><label for="about">About</label><input type="checkbox" id="about">
-                <ul class="submenu">
-                    <li><a href="about.php">About the Artist</a></li>
-                    <li><a href="services.php">Art Services</a></li>
-                </ul>
-            </li>
+            <li><a href="about.php">About</a></li>
 
-            <li><label for="gallery">Gallery</label><input type="checkbox" id="gallery">
+            <li><label for="gallery">Portfolio</label><input type="checkbox" id="gallery">
                 <ul class="submenu">
-                    <li><a href="irid.php">Iridescence Collection</a></li>
-                    <li><a href="portraits.php">Portraits</a></li>
+                    <li><a href="portfolio-2025.php">2025</a></li>
+                    <li><a href="portfolio-2024.php">2024</a></li>
                 </ul>
                 </li>
 
             <li><label for="shop">Shop</label><input type="checkbox" id="shop">
                 <ul class="submenu">
-                    <li><a href="sale_paintings.php">Paintings</a></li>
-                    <li><a href="sale_drawings.php">Drawings</a></li>
-                    <li><a href="sale_prints.php">Prints</a></li>
+                    <li><a href="sale.php">Sale Pieces</a></li>
                     <li><a href="commissions.php">Commissions</a></li>
                 </ul>
             </li>

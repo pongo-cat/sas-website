@@ -1,0 +1,166 @@
+/* COLOR REFERNCES
+darkest purple: rgb(23, 15, 26)
+medium purple:  rgb(60, 37, 80)
+light purple: rgb(188, 154, 230);
+
+yellow:rgb(253, 239, 221)
+*/
+
+
+/*BODY HEADER AND FOOTER*/
+body {
+    margin-top: 110px;
+    bottom: 0px;
+    background-color:rgb(195, 223, 239);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 0px;
+    background-color: rgb(60, 37, 80);
+    height: 100px;
+}
+
+.title-wrapper {
+    align-content: center;
+    position: absolute;
+    top: 10px;
+    left: 120px;
+    text-align: center;
+
+  }
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 0px;
+    background-color: rgb(60, 37, 80);
+    height: 50px;
+    text-align: center;
+    color: aliceblue;
+
+}
+
+ /*LINKS*/
+ a {
+  color: rgb(239, 171, 213);
+  text-decoration: none;
+}
+
+/*NAVIGATION BAR*/
+
+.sidebar {
+    width:100px;
+    right: 0;
+    position: fixed;
+    height: 100%;
+
+  }
+  
+  .mainmenu,
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+  }
+  
+  .mainmenu a,
+  .mainmenu label {
+    display: block;
+    background-color: rgba(253, 239, 221, 0.885);
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(23, 15, 26);
+    
+  }
+  
+  .mainmenu input {
+    display: none;
+  }
+  
+  
+  .mainmenu a:hover{
+    background-color: rgb(60, 37, 80);
+    color: aliceblue;
+  }
+  
+  .mainmenu label:hover{
+    background-color: rgb(60, 37, 80);
+    color: aliceblue;
+  }  
+
+  .mainmenu :checked+.submenu {
+    display: block;
+    max-height: 200px;
+
+  }
+  
+  .submenu a {
+    background-color: rgb(249, 246, 243);
+  }
+  
+  .submenu a:hover {
+    background-color: #483e5e;
+    color: aliceblue;
+  }
+  
+  .submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-out;
+  }
+
+    /*TEXT CONTENTS*/
+  .main-wrapper {
+    align-content: center;
+    background-color: rgba(60, 37, 80, 0.678);
+    color: #f2f2f2;
+    
+  }
+
+  .main-content {
+    text-align: center;
+    text-wrap: wrap;
+    margin-bottom: 70px;
+  }
+
+  .text-content {
+    margin-left: 130px;
+    margin-right: 130px;
+    margin-bottom: 130px;
+  
+  }
+
+  /*IMAGES*/
+  img.portfolio {
+    width: 50%;
+    height: 100%;
+  }
+
+  .container img.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+
+  /*STICKIES*/
+
+  /*INTERACTIVE FORMS*/
+  .contact-form {
+    padding: 20px;
+    
+  }
+
+  /*HEADERs*/
+  h1 {
+    align-self: center;
+    font-size:xx-large;
+    font-family:'Baskeville', serif;
+    font-variant: none;
+    color: #e7f7f6;
+  }

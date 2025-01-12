@@ -17,12 +17,16 @@
 
         <div class = "main-content">
 
-            <h1>Welcome to Sleipnir Art Studio!</h1>
-
             <canvas id = "gl-canvas" width = "800" height = "400"></canvas>
 
             <div class = "text-content">
-                <p>Write here</p>
+                <style>
+            a {
+    color:rgb(239, 171, 213);
+    text-decoration: none;
+  }</style>
+                <p>Thank you for your interest in my artwork.</p>
+                <p>For portrait commission information, please visit the <a href="commissions.php">commissions</a> page under 'Shop.'</p>
             </div>
             
         </div>
